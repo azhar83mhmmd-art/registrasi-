@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Flash Peak Community — Komunitas Lord Game Bola Online</title>
+<meta name="description" content="Flash Peak Community adalah portal komunitas resmi pemain game bola online Flash Peak. Gabung LordFamiliy, temukan squad, dan ikuti rules komunitas."/>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="landing.css"/>
+</head>
+<body>
+
+<canvas id="pitch-canvas"></canvas>
+<div class="field-lines"></div>
+<div class="field-glow-1"></div>
+<div class="field-glow-2"></div>
+
+<!-- NAVBAR -->
+<nav class="lp-navbar" id="lpNavbar">
+  <div class="lp-nav-container">
+    <a href="landing.html" class="brand" style="text-decoration:none">
+      <svg class="brand-icon" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="22" fill="#0F172A" stroke="url(#lg1)" stroke-width="2"/>
+        <path d="M24 10 L31 15.5 L28.3 24 L19.7 24 L17 15.5 Z" fill="url(#lg2)"/>
+        <path d="M24 10 L24 24 M19.7 24 L10 20 M28.3 24 L38 20 M19.7 24 L14 36 M28.3 24 L34 36" stroke="url(#lg1)" stroke-width="1.3" opacity="0.85"/>
+        <defs>
+          <linearGradient id="lg1" x1="2" y1="2" x2="46" y2="46"><stop offset="0%" stop-color="#22D3EE"/><stop offset="100%" stop-color="#39FF88"/></linearGradient>
+          <linearGradient id="lg2" x1="17" y1="10" x2="31" y2="24"><stop offset="0%" stop-color="#22D3EE"/><stop offset="100%" stop-color="#39FF88"/></linearGradient>
+        </defs>
+      </svg>
+      <div class="brand-text">
+        <span class="brand-main">FLASH PEAK</span>
+        <span class="brand-sub">Community</span>
+      </div>
+    </a>
+    <ul class="lp-nav-links">
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#posisi">Posisi</a></li>
+      <li><a href="#rules">Rules</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="lp-nav-cta">
+      <a href="pendaftaran.html" class="btn btn-primary btn-sm-inline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Daftar Sekarang
+      </a>
+    </div>
+    <button class="lp-hamburger" id="lpHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="lp-mobile-menu" id="lpMobileMenu">
+  <a href="#tentang">Tentang</a>
+  <a href="#posisi">Posisi</a>
+  <a href="#rules">Rules</a>
+  <a href="#faq">FAQ</a>
+  <a href="pendaftaran.html" class="btn btn-primary btn-sm-inline" style="margin-top:8px;justify-content:center">Daftar Sekarang</a>
+</div>
+
+<!-- HERO -->
+<header class="lp-hero">
+  <div class="lp-hero-inner">
+    <span class="lp-eyebrow">Portal Komunitas Game Bola</span>
+    <h1>Jadi <span class="accent" style="background:var(--grad-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Lord</span> di Flash Peak Community</h1>
+    <p class="lead">Flash Peak Community adalah wadah berkumpulnya pemain <b>game bola online Flash Peak</b> — bukan pendaftaran klub sepak bola asli. Temukan squad, ikuti mabar rutin, dan bangun rank bareng sesama Lord.</p>
+    <div class="lp-hero-cta">
+      <a href="pendaftaran.html" class="btn btn-primary btn-lg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Daftar LordFamiliy
+      </a>
+      <a href="#rules" class="btn btn-secondary btn-lg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+        Baca Rules
+      </a>
+    </div>
+    <div class="lp-stat-row">
+      <div class="lp-stat"><div class="lp-stat-num" id="statLordTotal">0</div><div class="lp-stat-label">Total Lord</div></div>
+      <div class="lp-stat"><div class="lp-stat-num">4</div><div class="lp-stat-label">Posisi Player</div></div>
+      <div class="lp-stat"><div class="lp-stat-num">Setiap Hari</div><div class="lp-stat-label">Mabar / Minggu</div></div>
+      <div class="lp-stat"><div class="lp-stat-num">24/7</div><div class="lp-stat-label">Komunitas Aktif</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- TENTANG -->
+<section class="lp-section" id="tentang">
+  <div class="lp-section-inner">
+    <div class="lp-section-head lp-reveal">
+      <span class="lp-eyebrow">Tentang Kami</span>
+      <h2>Apa itu Flash Peak Community?</h2>
+      <p>Komunitas independen untuk siapa pun yang bermain game bola online Flash Peak — tempat berkumpul, cari squad, dan naik rank bareng.</p>
+    </div>
+
+    <div class="lp-about-grid">
+      <div class="lp-about-card lp-reveal">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          Bukan Klub Sepak Bola Asli
+        </h3>
+        <p>Flash Peak Community adalah komunitas <b>pemain game</b> — fokus kami adalah dunia Flash Peak: mabar, strategi formasi, event komunitas, dan pertemanan antar pemain. Semua identitas seperti Lord, Divisi, dan Posisi mengikuti istilah di dalam game, bukan sepak bola sungguhan.</p>
+        <div class="lp-notice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p>Pendaftaran ini murni untuk menjadi anggota komunitas game — tidak ada seleksi fisik, tidak ada latihan lapangan.</p>
+        </div>
+      </div>
+
+      <div class="lp-feature-list lp-reveal reveal-delay-1">
+        <div class="lp-feature-item">
+          <div class="lp-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div><h4>Squad &amp; Pertemanan</h4><p>Kenalan dengan Lord lain, bentuk squad, dan main bareng tiap minggu.</p></div>
+        </div>
+        <div class="lp-feature-item">
+          <div class="lp-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 8.5 22 9.5 17 14.5 18.5 21.5 12 18 5.5 21.5 7 14.5 2 9.5 9 8.5 12 2Z"/></svg></div>
+          <div><h4>Naik Rank Bareng</h4><p>Sharing tips formasi, posisi, dan strategi biar rank makin cepat naik.</p></div>
+        </div>
+        <div class="lp-feature-item">
+          <div class="lp-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div><h4>Event &amp; Mabar Rutin</h4><p>Jadwal mabar komunitas dan turnamen internal untuk semua Lord.</p></div>
+        </div>
+        <div class="lp-feature-item">
+          <div class="lp-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="16" r="1"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <div><h4>Identity Card Digital</h4><p>Setiap Lord dapat kartu identitas digital sebagai bukti anggota resmi.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POSISI -->
+<section class="lp-section" id="posisi">
+  <div class="lp-section-inner">
+    <div class="lp-section-head lp-reveal">
+      <span class="lp-eyebrow">Posisi Player</span>
+      <h2>Pilih Posisi Favoritmu</h2>
+      <p>Saat mendaftar, kamu akan memilih salah satu dari 4 posisi utama di Flash Peak.</p>
+    </div>
+    <div class="lp-position-grid">
+      <div class="lp-position-card lp-reveal">
+        <div class="lp-position-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="lp-position-code">ST</div>
+        <div class="lp-position-name">Striker</div>
+        <p class="lp-position-desc">Ujung tombak serangan. Fokus finishing dan mencetak gol sebanyak mungkin.</p>
+      </div>
+      <div class="lp-position-card lp-reveal reveal-delay-1">
+        <div class="lp-position-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+        <div class="lp-position-code">CM</div>
+        <div class="lp-position-name">Central Mid</div>
+        <p class="lp-position-desc">Otak permainan di lini tengah. Mengatur alur bola dan distribusi umpan.</p>
+      </div>
+      <div class="lp-position-card lp-reveal reveal-delay-2">
+        <div class="lp-position-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg></div>
+        <div class="lp-position-code">WF</div>
+        <div class="lp-position-name">Wing Forward</div>
+        <p class="lp-position-desc">Mengandalkan kecepatan di sisi sayap untuk membongkar pertahanan lawan.</p>
+      </div>
+      <div class="lp-position-card lp-reveal reveal-delay-3">
+        <div class="lp-position-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6l-9-4Z"/></svg></div>
+        <div class="lp-position-code">CB</div>
+        <div class="lp-position-name">Center Back</div>
+        <p class="lp-position-desc">Benteng pertahanan. Mengamankan area belakang dan menghentikan serangan lawan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RULES -->
+<section class="lp-section" id="rules">
+  <div class="lp-section-inner">
+    <div class="lp-section-head lp-reveal">
+      <span class="lp-eyebrow">Peraturan Komunitas</span>
+      <h2>Rules Flash Peak Community</h2>
+      <p>Wajib dibaca dan disetujui sebelum bergabung. Berlaku untuk semua Lord tanpa terkecuali.</p>
+    </div>
+    <div class="lp-rules-grid">
+      <div class="lp-rule-card lp-reveal">
+        <span class="lp-rule-num">01</span>
+        <div><h4>Saling Menghormati</h4><p>Tidak ada toxic, SARA, atau ujaran kebencian ke sesama anggota di dalam maupun luar game.</p></div>
+      </div>
+      <div class="lp-rule-card lp-reveal reveal-delay-1">
+        <span class="lp-rule-num">02</span>
+        <div><h4>Data Diri Valid</h4><p>Isi biodata pendaftaran dengan data asli — nama, usia, ID Game, dan username harus benar.</p></div>
+      </div>
+      <div class="lp-rule-card lp-reveal reveal-delay-2">
+        <span class="lp-rule-num">03</span>
+        <div><h4>Aktif di Grup</h4><p>Setelah daftar, wajib join dan kirim Identity Card di grup WhatsApp komunitas agar mudah dikenali.</p></div>
+      </div>
+      <div class="lp-rule-card lp-reveal reveal-delay-3">
+        <span class="lp-rule-num">04</span>
+        <div><h4>Dilarang Curang</h4><p>Tidak menggunakan cheat, bug abuse, atau joki akun dalam game Flash Peak.</p></div>
+      </div>
+      <div class="lp-rule-card lp-reveal">
+        <span class="lp-rule-num">05</span>
+        <div><h4>Satu Akun, Satu Pendaftaran</h4><p>Setiap ID Game dan username hanya boleh didaftarkan satu kali.</p></div>
+      </div>
+      <div class="lp-rule-card lp-reveal reveal-delay-1">
+        <span class="lp-rule-num">06</span>
+        <div><h4>Ikuti Jadwal Mabar</h4><p>Diusahakan aktif pada jadwal mabar komunitas agar squad tetap solid.</p></div>
+      </div>
+      <div class="lp-rule-card lp-reveal reveal-delay-2">
+        <span class="lp-rule-num">07</span>
+        <div><h4>Jaga Nama Komunitas</h4><p>Berperilaku baik saat bertanding melawan komunitas atau clan lain.</p></div>
+      </div>
+      <div class="lp-rule-card lp-reveal reveal-delay-3">
+        <span class="lp-rule-num">08</span>
+        <div><h4>Ikuti Arahan Admin</h4><p>Patuhi keputusan dan pengumuman resmi dari admin/moderator komunitas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="lp-section" id="faq">
+  <div class="lp-section-inner">
+    <div class="lp-section-head lp-reveal">
+      <span class="lp-eyebrow">FAQ</span>
+      <h2>Pertanyaan Umum</h2>
+      <p>Masih ragu? Cek dulu jawaban dari pertanyaan yang paling sering ditanyakan.</p>
+    </div>
+    <div class="lp-faq-list lp-reveal">
+      <div class="lp-faq-item">
+        <div class="lp-faq-q">Apakah ini pendaftaran klub sepak bola asli?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="lp-faq-a"><p>Bukan. Flash Peak Community adalah komunitas pemain <b>game bola online</b> Flash Peak, murni untuk kegiatan di dalam game dan pertemanan antar pemain.</p></div>
+      </div>
+      <div class="lp-faq-item">
+        <div class="lp-faq-q">Apakah pendaftaran ini berbayar?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="lp-faq-a"><p>Tidak, pendaftaran menjadi anggota Flash Peak Community sepenuhnya gratis.</p></div>
+      </div>
+      <div class="lp-faq-item">
+        <div class="lp-faq-q">Bagaimana cara memilih posisi ST, CM, WF, atau CB?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="lp-faq-a"><p>Pilih posisi yang paling sering kamu mainkan di Flash Peak pada formulir pendaftaran — ini membantu kami mengelompokkan squad.</p></div>
+      </div>
+      <div class="lp-faq-item">
+        <div class="lp-faq-q">Apa yang saya dapat setelah mendaftar?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="lp-faq-a"><p>Kamu akan mendapat Identity Card digital berisi avatar, ID member unik, username, dan posisi — bisa diunduh dan dikirim ke grup komunitas.</p></div>
+      </div>
+      <div class="lp-faq-item">
+        <div class="lp-faq-q">Bagaimana cara gabung grup komunitasnya?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="lp-faq-a"><p>Setelah mengunduh Identity Card di halaman pendaftaran, akan muncul tombol untuk langsung join grup WhatsApp komunitas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="lp-section">
+  <div class="lp-final-cta lp-reveal">
+    <h2>Siap Gabung LordFamiliy di Flash Peak?</h2>
+    <p>Isi biodata, pilih posisi dan avatar, lalu dapatkan Identity Card digital kamu dalam hitungan detik.</p>
+    <a href="pendaftaran.html" class="btn btn-primary btn-lg">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Daftar Sekarang
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="lp-footer">
+  <div class="lp-footer-inner">
+    <div class="lp-footer-brand">
+      <div class="brand">
+        <svg class="brand-icon" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="22" fill="#0F172A" stroke="url(#lg3)" stroke-width="2"/>
+          <path d="M24 10 L31 15.5 L28.3 24 L19.7 24 L17 15.5 Z" fill="url(#lg4)"/>
+          <defs>
+            <linearGradient id="lg3" x1="2" y1="2" x2="46" y2="46"><stop offset="0%" stop-color="#22D3EE"/><stop offset="100%" stop-color="#39FF88"/></linearGradient>
+            <linearGradient id="lg4" x1="17" y1="10" x2="31" y2="24"><stop offset="0%" stop-color="#22D3EE"/><stop offset="100%" stop-color="#39FF88"/></linearGradient>
+          </defs>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-main">FLASH PEAK</span>
+          <span class="brand-sub">Community</span>
+        </div>
+      </div>
+      <p>Portal komunitas resmi pemain game bola online Flash Peak. Tempat berkumpul, cari squad, dan naik rank bareng para Lord lainnya.</p>
+      <div class="lp-footer-social">
+        <a href="https://chat.whatsapp.com/Jhr802X5YEzBfHrHBNZMMp?s=cl&p=a&ilr=4" target="_blank" rel="noopener" class="lp-social-icon" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-11.8 7.8L4 21l1.8-5A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="lp-footer-col">
+      <h4>Navigasi</h4>
+      <ul>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#posisi">Posisi</a></li>
+        <li><a href="#rules">Rules</a></li>
+          <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="lp-footer-col">
+      <h4>Komunitas</h4>
+      <ul>
+        <li><a href="pendaftaran.html">Daftar Sekarang</a></li>
+        <li><a href="https://chat.whatsapp.com/Jhr802X5YEzBfHrHBNZMMp?s=cl&p=a&ilr=4" target="_blank" rel="noopener">Join Grup WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="lp-footer-bottom">
+    <p>&copy; 2026 Flash Peak Community &mdash; portal komunitas game bola online, bukan klub sepak bola asli.</p>
+  </div>
+</footer>
+
+<script src="landing.js"></script>
+</body>
+</html>
